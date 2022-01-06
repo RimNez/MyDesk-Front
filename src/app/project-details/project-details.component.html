@@ -1,0 +1,19 @@
+<div *ngIf="project">
+    <div>
+        <label>Name: </label> {{project.name}}
+    </div>
+    <div>
+        <label>Description: </label> {{project.description}}
+    </div>
+    <div>
+        <label>Active: </label> {{project.active}}
+    </div>
+
+    <span class="button is-small btn-primary" *ngIf='project.active' (click)='updateActive(false)'>Inactive</span>
+
+    <span class="button is-small btn-primary" *ngIf='!project.active' (click)='updateActive(true)'>Active</span>
+
+    <span class="button is-small btn-danger" (click)='deleteProject(project.id)'>Delete</span>
+
+    <hr/>
+</div>
