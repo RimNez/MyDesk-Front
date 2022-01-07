@@ -8,4 +8,3 @@ export class Project {
     //@ts-ignore
     active: boolean;
 }
-//hahahahahahah

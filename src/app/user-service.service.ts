@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class UserServiceService {
 
   private baseUrl = 'http://localhost:8036/generated/user';
+  
   constructor(private http: HttpClient) {}
 
   getUser(id: number): Observable<any> {

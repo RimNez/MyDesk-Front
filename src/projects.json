@@ -1,0 +1,16 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "prj--Rimu",
+      "description": "pr1200",
+      "active": false
+    },
+    {
+      "id": 2,
+      "name": "prjd",
+      "description": "pr12",
+      "active": false
+    }
+  ]
+}

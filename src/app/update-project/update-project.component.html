@@ -11,6 +11,14 @@
       <input type="text" class="form-control" id="description" required [(ngModel)]="project.description" name="description">
     </div>
 
+    <div>
+      <label>Active: </label> {{project.active}}
+  </div>
+
+  <span class="button is-small btn-primary" *ngIf='project.active' (click)='updateActive(false)'>Inactive</span>
+
+  <span class="button is-small btn-primary" *ngIf='!project.active' (click)='updateActive(true)'>Active</span>
+
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>

@@ -9,6 +9,10 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { ProjectDetailsComponent } from './project-details/project-details.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { UpdateProjectComponent } from './update-project/update-project.component';
+import { LoginFormComponent } from './Auth-Comp/login-form/login-form.component';
+import { RegisterFormComponent } from './Auth-Comp/register-form/register-form.component';
+import { ProjectService } from './project.service';
+import { UserServiceService } from './user-service.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,9 @@ import { UpdateProjectComponent } from './update-project/update-project.componen
     CreateProjectComponent,
     ProjectDetailsComponent,
     ProjectListComponent,
-    UpdateProjectComponent
+    UpdateProjectComponent,
+    LoginFormComponent,
+    RegisterFormComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,8 @@ import { UpdateProjectComponent } from './update-project/update-project.componen
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Project } from '../project';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectService } from '../project.service';
+import { ProjectDetailsComponent } from '../project-details/project-details.component';
 
 @Component({
   selector: 'app-update-project',
@@ -16,7 +17,7 @@ export class UpdateProjectComponent implements OnInit {
    
 
   constructor(private route: ActivatedRoute,private router: Router,
-    private projectService: ProjectService) { }
+    private projectService: ProjectService, private detailC : ProjectDetailsComponent) { }
 
   ngOnInit() {
     this.project = new Project();
@@ -48,5 +49,7 @@ export class UpdateProjectComponent implements OnInit {
     this.router.navigate(['/projects']);
   }
 
-  
+  updateActive(flag:boolean){
+    this.detailC.updateActive(flag);
+  }
 }
