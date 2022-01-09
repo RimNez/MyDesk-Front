@@ -32,8 +32,9 @@ export class LoginFormComponent implements OnInit {
     this.userService
     .signInUser(this.user).subscribe(data => {
       console.log(data)
+      localStorage.setItem('userId',this.user.id.toString())
       if(data==null){
-        (        error: any) => console.log(error);
+        (error: any) => console.log(error);
         this.submitted=true;
       }else{
         this.gotoList();

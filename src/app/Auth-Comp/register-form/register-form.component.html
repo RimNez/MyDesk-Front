@@ -8,8 +8,7 @@
                 <form class="box">
                     <h1>Register</h1>
 					<p class="text-muted"> Please enter your info !</p> 
-                    <input type="text" id="fname" placeholder="First Name" required [(ngModel)]="user.firstname" name="firstname">
-                    <input type="text" id="lname"  placeholder="Last Name" required [(ngModel)]="user.lastname" name="lastname">
+                    <input type="text" id="login" placeholder="Login" required [(ngModel)]="user.login" name="login">
                     <input type="text" id="mail" name="email" placeholder="Email" required [(ngModel)]="user.email" name="email"> 
                     <input type="password" id="pswd" name="password" placeholder="Password" required [(ngModel)]="user.password" name="password">  
                     <input type="password" id="repswd" name="password1" placeholder="Retype-Password" required [(ngModel)]="repswd" name="repassword">  
@@ -18,7 +17,7 @@
                             Passwords mismatch !
                           </div>
                     </div>
-					<input type="submit" *ngIf="user.firstname && user.email && user.password && user.lastname && repswd" (click)="onSubmit()" value="Register">                
+					<input type="submit" *ngIf="user.login && user.email && user.password && repswd" (click)="onSubmit()" value="Register">                
 				</form>
         </div>
     </div>

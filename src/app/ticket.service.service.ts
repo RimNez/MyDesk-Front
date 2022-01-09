@@ -14,8 +14,8 @@ export class TicketService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  createTicket(project: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, project);
+  createTicket(ticket: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}`, ticket);
   }
 
   updateTicket(id: number, value: any): Observable<Object> {

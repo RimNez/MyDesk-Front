@@ -5,4 +5,6 @@ export class Ticket {
     object: string;
     //@ts-ignore
     etat: string;
+    //@ts-ignore
+    userId: number;
 }

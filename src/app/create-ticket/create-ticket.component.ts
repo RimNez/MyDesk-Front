@@ -17,9 +17,10 @@ export class CreateTicketComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  newProject(): void {
+  newTicket(): void {
     this.submitted = false;
     this.ticket = new Ticket();
+    this.ticket.userId = parseInt(localStorage.getItem('userId') || 'null');
   }
 
   save() {
