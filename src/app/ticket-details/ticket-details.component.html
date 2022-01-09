@@ -1,0 +1,15 @@
+<div *ngIf="ticket">
+    <div>
+        <label>Object: </label> {{ticket.object}}
+    </div>
+    <div>
+        <label>Etat: </label> {{ticket.etat}}
+    </div>
+    
+    <span class="button is-small btn-danger" (click)='deleteTicket(ticket.id)'>Delete</span>
+
+    <hr/>
+</div>
+<hr>
+<button (click)="goToList()" class="btn btn-primary">Tickets List</button>
+<br>

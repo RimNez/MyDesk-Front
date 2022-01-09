@@ -15,9 +15,9 @@
                 <tr *ngFor="let project of projects">
                     <td>{{project.name}}</td>
                     <td>{{project.description}}</td>
-                    <td><button (click)="detailProject(project.id)">Details</button></td>    
-                    <td><button (click)="updateProject(project.id,project)">Update</button></td>
-                    <td><button (click)="deleteProject(project.id)">Delete</button></td>
+                    <td><button class="btn btn-secondary" (click)="detailProject(project.id)">Details</button></td>    
+                    <td><button class="btn btn-primary" (click)="updateProject(project.id,project)">Update</button></td>
+                    <td><button class="btn btn-danger" (click)="deleteProject(project.id)">Delete</button></td>
                 </tr>
             </tbody>
         </table>

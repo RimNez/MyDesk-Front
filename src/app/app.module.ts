@@ -13,6 +13,10 @@ import { LoginFormComponent } from './Auth-Comp/login-form/login-form.component'
 import { RegisterFormComponent } from './Auth-Comp/register-form/register-form.component';
 import { ProjectService } from './project.service';
 import { UserServiceService } from './user-service.service';
+import { CreateTicketComponent } from './create-ticket/create-ticket.component';
+import { UpdateTicketComponent } from './update-ticket/update-ticket.component';
+import { TicketListComponent } from './ticket-list/ticket-list.component';
+import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { UserServiceService } from './user-service.service';
     ProjectListComponent,
     UpdateProjectComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    CreateTicketComponent,
+    UpdateTicketComponent,
+    TicketListComponent,
+    TicketDetailsComponent
   ],
   imports: [
     BrowserModule,

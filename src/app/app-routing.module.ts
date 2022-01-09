@@ -6,6 +6,10 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { UpdateProjectComponent } from './update-project/update-project.component';
 import { LoginFormComponent } from './Auth-Comp/login-form/login-form.component';
 import { RegisterFormComponent } from './Auth-Comp/register-form/register-form.component';
+import { TicketListComponent } from './ticket-list/ticket-list.component';
+import { CreateTicketComponent } from './create-ticket/create-ticket.component';
+import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
+import { UpdateTicketComponent } from './update-ticket/update-ticket.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -14,7 +18,11 @@ const routes: Routes = [
   { path: 'projects', component: ProjectListComponent },
   { path: 'addProject', component: CreateProjectComponent },
   { path: 'detailsProject/:id', component: ProjectDetailsComponent },
-  { path: 'updateProject/:id', component: UpdateProjectComponent }
+  { path: 'updateProject/:id', component: UpdateProjectComponent },
+  { path: 'tickets', component: TicketListComponent },
+  { path: 'addTicket', component: CreateTicketComponent },
+  { path: 'detailsTicket/:id', component: TicketDetailsComponent },
+  { path: 'updateTicket/:id', component: UpdateTicketComponent }
 ];
 
 @NgModule({
