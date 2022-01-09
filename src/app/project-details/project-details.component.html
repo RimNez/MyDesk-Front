@@ -3,12 +3,29 @@
         <label>Name: </label> {{project.name}}
     </div>
     <div>
-        <label>Description: </label> {{project.description}}
+        <label>Category: </label> {{project.category}}
+    </div>
+    <div>
+        <label>Priority: </label> {{project.priority}}
+    </div>
+    <div>
+        <label>Status: </label> {{project.status}}
+    </div>
+    <div>
+        <label>Start Date: </label> {{project.startDate}}
+    </div>
+    <div>
+        <label>End Date: </label> {{project.endDate}}
+    </div>
+    <div>
+        <label>Budget: </label> {{project.budget}}
+    </div>
+    <div>
+        <label>Budget In Days: </label> {{project.budgetInDays}}
     </div>
     <div>
         <label>Active: </label> {{project.active}}
     </div>
-
     <span class="button is-small btn-primary" *ngIf='project.active' (click)='updateActive(false)'>Inactive</span>
 
     <span class="button is-small btn-primary" *ngIf='!project.active' (click)='updateActive(true)'>Active</span>

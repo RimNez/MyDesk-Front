@@ -4,7 +4,21 @@ export class Project {
     //@ts-ignore
     name: string;
     //@ts-ignore
-    description: string;
+    category: string;
+    //@ts-ignore
+    priority: string;
+    //@ts-ignore
+    status: string;
+    //@ts-ignore
+    startDate: Date;
+    //@ts-ignore
+    endDate: Date;
+    //@ts-ignore
+    budget: double;
+    //@ts-ignore
+    budgetInDays: number;
+    //@ts-ignore
+    ownerId: number;
     //@ts-ignore
     active: boolean;
 }
