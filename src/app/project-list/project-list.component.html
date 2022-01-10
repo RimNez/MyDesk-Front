@@ -13,7 +13,7 @@
                     <th>StartDate</th>
                     <th>EndDate</th>
                     <th>Budget</th>
-                    <th>budgetInDays</th>
+                    <th>Budget In Days</th>
                     <th colspan="3">Actions</th>
                 </tr>
             </thead>
@@ -23,11 +23,11 @@
                     <td>{{project.category}}</td>
                     <td>{{project.priority}}</td>
                     <td>{{project.status}}</td>
-                    <td>{{project.startDate}</td>
+                    <td>{{project.startDate}}</td>
                     <td>{{project.endDate}}</td>
                     <td>{{project.budget}}</td>
                     <td>{{project.budgetInDays}}</td>
-                    <td><button class="btn btn-secondary" (click)="detailProject(project.id)">Details</button></td>    
+                    <td><button class="btn btn-secondary" (click)="detailProject(project.id)">Details</button></td>        
                     <td><button class="btn btn-primary" (click)="updateProject(project.id,project)">Update</button></td>
                     <td><button class="btn btn-danger" (click)="deleteProject(project.id)">Delete</button></td>
                 </tr>

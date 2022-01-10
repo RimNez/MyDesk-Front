@@ -4,13 +4,14 @@
       "id": 1,
       "name": "prj--Rimu",
       "description": "pr1200",
-      "active": false
-    },
-    {
-      "id": 2,
-      "name": "prjd",
-      "description": "pr12",
-      "active": false
+      "active": false,
+      "startDate": "2022-01-06",
+      "endDate": "2022-01-12",
+      "category": "cat 1",
+      "priority": "pr 1 ",
+      "status": "pending",
+      "budget": 45000,
+      "budgetInDays": 2500
     },
     {
       "object": "obj--120",

@@ -8,7 +8,7 @@
                 <tr>
                     <th>Object</th>
                     <th>Etat</th>
-                    <th colspan="3">Actions</th>
+                    <th colspan="4">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -16,6 +16,7 @@
                     <td>{{ticket.object}}</td>
                     <td>{{ticket.etat}}</td>
                     <td><button class="btn btn-secondary" (click)="detailTicket(ticket.id)">Details</button></td>    
+                    <td><button class="btn btn-secondary" (click)="addMessage(ticket.id)">add Message</button></td>
                     <td><button class="btn btn-primary" (click)="updateTicket(ticket.id,ticket)">Update</button></td>
                     <td><button class="btn btn-danger" (click)="deleteTicket(ticket.id)">Delete</button></td>
                 </tr>
