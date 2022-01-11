@@ -39,6 +39,7 @@ import { TicketDetailsComponent } from './ticket-details/ticket-details.componen
     HttpClientModule
   ],
   providers: [
+    ProjectService
   ],
   bootstrap: [AppComponent]
 })

@@ -18,7 +18,7 @@ export class Project {
     //@ts-ignore
     budgetInDays: number;
     //@ts-ignore
-    ownerId: number;
+    userId: number;
     //@ts-ignore
     active: boolean;
 }

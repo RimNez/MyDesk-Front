@@ -13,7 +13,7 @@
                     <div [hidden]="!submitted">
                         <div class="alert alert-danger" role="alert">
                             Wrong Login/Password !
-                          </div>
+                        </div>
                     </div>
 					<a (click)="list()" class="forgot Alink">Register</a>  
 					<input type="submit" *ngIf=" user.login && user.password" (click)="onSubmit()" name="" value="Login">                

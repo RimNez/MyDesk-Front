@@ -20,6 +20,7 @@ export class CreateProjectComponent implements OnInit {
   newProject(): void {
     this.submitted = false;
     this.project = new Project();
+    this.project.userId = parseInt(localStorage.getItem('userId') || 'null');
   }
 
   save() {
