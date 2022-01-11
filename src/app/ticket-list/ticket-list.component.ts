@@ -52,4 +52,8 @@ export class TicketListComponent implements OnInit {
     this.router.navigate(['detailsTicket', id]);
   }
 
+  addMessage(id:number){
+    this.router.navigate(['addMessage', id]);
+  }
+
 }
