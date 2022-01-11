@@ -10,6 +10,7 @@ import { User } from 'src/app/user';
 export class LoginFormComponent implements OnInit {
 
   user: User = new User();
+  user1:any;
   submitted = false;
   repswd : string = '';
 
@@ -21,6 +22,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.newUser();
   }
 
   newUser(): void {
@@ -32,7 +34,8 @@ export class LoginFormComponent implements OnInit {
     this.userService
     .signInUser(this.user).subscribe(data => {
       console.log(data)
-      localStorage.setItem('userId',this.user.id.toString())
+      this.user1 = data;
+      localStorage.setItem('userId',JSON.stringify(this.user1.id) )
       if(data==null){
         (error: any) => console.log(error);
         this.submitted=true;
@@ -46,7 +49,7 @@ export class LoginFormComponent implements OnInit {
   
 
   gotoList() {
-    this.router.navigate(['/projets']);
+    this.router.navigate(['/tickets']);
   }
 
 
