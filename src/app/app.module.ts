@@ -41,7 +41,6 @@ import { AddMessageComponent } from './add-message/add-message.component';
     HttpClientModule
   ],
   providers: [
-    ProjectService
   ],
   bootstrap: [AppComponent]
 })
