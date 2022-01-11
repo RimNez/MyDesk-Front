@@ -5,36 +5,33 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UserServiceService {
+export class AdminService {
 
-  private baseUrl = 'http://localhost:8085/api/user';
+  private baseUrl = 'http://localhost:8036/generated/user';
   
   constructor(private http: HttpClient) {}
 
-  getUser(id: number): Observable<any> {
+  getAdmin(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/id/${id}`);
   }
 
-  createUser(user: Object): Observable<Object> {
-    console.log(user);
-    return this.http.post(`${this.baseUrl}/`, user);
+  createAdmin(admin: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/`, admin);
   }
 
-  signInUser(user: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}/login`, user);
+  signInAdmin(admin: Object): Observable<Object> {
+    return this.http.post(`${this.baseUrl}/signIn`, admin);
   }
 
-  updateUser(value: any): Observable<Object> {
+  updateAdmin(value: any): Observable<Object> {
     return this.http.put(`${this.baseUrl}/update/`, value);
   }
 
-  deleteUser(id: number): Observable<any> {
+  deleteAdmin(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/id/${id}`, { responseType: 'text' });
   }
 
-  getUserList(): Observable<any> {
+  getAdminList(): Observable<any> {
     return this.http.get(`${this.baseUrl}/`);
   }
-
-
 }

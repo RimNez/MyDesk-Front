@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserServiceService } from '../../user-service.service';
 import { User } from '../../user';
+import { Admin } from 'src/app/admin';
+import { AdminService } from 'src/app/admin.service';
 
 
 
@@ -13,14 +15,21 @@ import { User } from '../../user';
 export class RegisterFormComponent implements OnInit {
 
   user: User = new User();
+  admin:Admin = new Admin();
   submitted = false;
   mismatch =false;
   repswd : string = '';
 
   constructor(private userService: UserServiceService,
+    private adminService : AdminService,
     private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  newAdmin():void{
+    this.submitted = false;
+    this.admin = new Admin();
   }
 
   newUser(): void {
@@ -33,7 +42,7 @@ export class RegisterFormComponent implements OnInit {
     .createUser(this.user).subscribe(data => {
       console.log(data)
       this.user = new User();
-      this.gotoList();
+      //this.gotoList();
     }, 
     error => console.log(error));
   }
@@ -43,7 +52,7 @@ export class RegisterFormComponent implements OnInit {
       this.submitted = true;
       this.save();  
     }else{
-      this.router.navigate(['/register']);
+      //this.router.navigate(['/register']);
       this.mismatch=true;
     }
       
