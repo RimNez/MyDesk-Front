@@ -14,9 +14,10 @@ import { AddMessageComponent } from './add-message/add-message.component';
 import { MessageListComponent } from './message-list/message-list.component';
 import {CreateTacheComponent} from "./create-tache/create-tache.component";
 import {tacheListComponent} from "./tache-list/tache-list.component";
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', component: LoginFormComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'register', component: RegisterFormComponent },
   { path: 'projects', component: ProjectListComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'updateTicket/:id', component: UpdateTicketComponent },
   { path: 'addTache', component: CreateTacheComponent },
   { path: 'taches', component: tacheListComponent }
+
 ];
 
 @NgModule({

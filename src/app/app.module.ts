@@ -22,6 +22,7 @@ import { MessageListComponent } from './message-list/message-list.component';
 import { CreateTacheComponent } from './create-tache/create-tache.component';
 import {tacheListComponent} from "./tache-list/tache-list.component";
 import {tacheDetailsComponent} from "./tache-details/tache-details.component";
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -41,8 +42,8 @@ import {tacheDetailsComponent} from "./tache-details/tache-details.component";
     MessageListComponent,
     CreateTacheComponent,
     tacheListComponent,
-    tacheDetailsComponent
-
+    tacheDetailsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

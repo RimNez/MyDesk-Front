@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class UserServiceService {
 
   private baseUrl = 'http://localhost:8085/api/user';
-  
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) { }
 
   getUser(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/id/${id}`);
@@ -22,6 +22,9 @@ export class UserServiceService {
 
   signInUser(user: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}/login`, user);
+  }
+  signInAdmin(admin: Object): Observable<Object> {
+    return this.http.post(`http://localhost:8085/api/Admin/login`, admin);
   }
 
   updateUser(value: any): Observable<Object> {
