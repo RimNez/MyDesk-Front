@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Message } from '../Models/message';
 import { MessageService } from '../message.service';
 import { Ticket } from '../Models/ticket';
+import { TicketService } from '../ticket.service.service';
 
 @Component({
   selector: 'app-add-message',
@@ -12,12 +13,14 @@ import { Ticket } from '../Models/ticket';
 export class AddMessageComponent implements OnInit {
 
   //@ts-ignore
-  id: number; 
-  message : Message = new Message;
+  id: number;
+  message: Message = new Message;
   submitted = false;
+  type: any;
+  adminId: any;
 
-  constructor(private messageService: MessageService,
-    private router:Router,
+  constructor(private messageService: MessageService, private ticketService: TicketService,
+    private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -33,10 +36,17 @@ export class AddMessageComponent implements OnInit {
   }
 
   save() {
+
     this.messageService.createMessage(this.message)
       .subscribe(data => console.log(data), error => console.log(error));
-    this.message = new Message();
-    
+
+    this.type = localStorage.getItem("type");
+    if (this.type == "admin") {
+      this.adminId = localStorage.getItem("adminId");
+      console.log(this.adminId + "hi" + this.message.ticket.id);
+      this.ticketService.updateAdminId(this.adminId, this.message.ticket.id)
+        .subscribe(data => console.log(data), error => console.log(error));
+    }
   }
 
   onSubmit() {
@@ -45,7 +55,7 @@ export class AddMessageComponent implements OnInit {
     this.router.navigate(['listMessage']);
   }
 
-  gotoMessages(){
+  gotoMessages() {
     this.router.navigate(['listMessage']);
   }
 
