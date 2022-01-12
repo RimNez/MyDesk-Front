@@ -13,10 +13,11 @@
             </thead>
             <tbody>
                 <tr *ngFor="let ticket of tickets">
-                    <td>{{ticket.object}}</td>
+                    <td>{{ticket.objet}}</td>
                     <td>{{ticket.etat}}</td>
                     <td><button class="btn btn-secondary" (click)="detailTicket(ticket.id)">Details</button></td>    
                     <td><button class="btn btn-secondary" (click)="addMessage(ticket.id)">add Message</button></td>
+                    <td><button class="btn btn-success" (click)="listMessages(ticket.id)">Messages</button></td>
                     <td><button class="btn btn-primary" (click)="updateTicket(ticket.id,ticket)">Update</button></td>
                     <td><button class="btn btn-danger" (click)="deleteTicket(ticket.id)">Delete</button></td>
                 </tr>

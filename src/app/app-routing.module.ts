@@ -11,6 +11,7 @@ import { CreateTicketComponent } from './create-ticket/create-ticket.component';
 import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
 import { UpdateTicketComponent } from './update-ticket/update-ticket.component';
 import { AddMessageComponent } from './add-message/add-message.component';
+import { MessageListComponent } from './message-list/message-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'addTicket', component: CreateTicketComponent },
   { path: 'detailsTicket/:id', component: TicketDetailsComponent },
   { path: 'addMessage/:id', component: AddMessageComponent },
+  { path: 'listMessage/:id', component: MessageListComponent },
   { path: 'updateTicket/:id', component: UpdateTicketComponent }
 ];
 

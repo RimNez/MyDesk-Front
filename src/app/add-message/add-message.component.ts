@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Message } from '../message';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Message } from '../Models/message';
 import { MessageService } from '../message.service';
+import { Ticket } from '../Models/ticket';
 
 @Component({
   selector: 'app-add-message',
@@ -15,29 +16,37 @@ export class AddMessageComponent implements OnInit {
   message : Message = new Message;
   submitted = false;
 
-  constructor(private messageService: MessageService,private route: ActivatedRoute) { }
+  constructor(private messageService: MessageService,
+    private router:Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.newTicket();
+    this.newMessage();
   }
 
-  newTicket(): void {
+  newMessage(): void {
     this.submitted = false;
     this.message = new Message();
-    this.message.ticket_id = this.id;
+    this.message.ticket = new Ticket();
+    this.message.ticket.id = this.id;
   }
 
   save() {
     this.messageService.createMessage(this.message)
       .subscribe(data => console.log(data), error => console.log(error));
-      console.log(this.message.ticket_id)
     this.message = new Message();
+    
   }
 
   onSubmit() {
     this.submitted = true;
     this.save();
+    this.router.navigate(['listMessage']);
+  }
+
+  gotoMessages(){
+    this.router.navigate(['listMessage']);
   }
 
 }

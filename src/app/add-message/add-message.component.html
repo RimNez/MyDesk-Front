@@ -1,3 +1,17 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+		<div [hidden]="!submitted">
+			<div class="alert alert-success" role="alert">
+				<strong>You submitted successfully! Go back</strong>
+			</div>
+			<div class="alert alert-success" role="alert">
+			<button (click)="gotoMessages()" type="button" style="color: black;" class="btn btn-success"><h4 class="alert-heading">Messages List</h4></button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
 <div class="bg-contact3" style="background-image: url('images/bg-01.jpg');">
 	<div class="container-contact3">
 		<div class="wrap-contact3">
@@ -18,9 +32,7 @@
 		</div>
 	</div>
 </div>
-<div [hidden]="!submitted">
-    <h4>You submitted successfully!</h4>
-</div>
+
 
 	<div id="dropDownSelect1"></div>
 

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserServiceService } from '../../user-service.service';
-import { User } from '../../user';
-import { Admin } from 'src/app/admin';
+import { User } from 'src/app/Models/user';
+import { Admin } from 'src/app/Models/admin';
 import { AdminService } from 'src/app/admin.service';
+import { UserServiceService } from 'src/app/user-service.service';
 
 
 

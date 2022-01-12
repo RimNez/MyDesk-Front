@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TicketService {
 
-  private baseUrl = 'http://localhost:3000/projects';
+  private baseUrl = 'http://localhost:8085/api/ticket';
   constructor(private http: HttpClient) { }
 
   getTicket(id: number): Observable<any> {
@@ -15,11 +15,12 @@ export class TicketService {
   }
 
   createTicket(ticket: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, ticket);
+    console.log(ticket)
+    return this.http.post(`${this.baseUrl}/`, ticket);
   }
 
-  updateTicket(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+  updateTicket(ticket: object): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/update`, ticket);
   }
 
   deleteTicket(id: number): Observable<any> {
@@ -27,6 +28,6 @@ export class TicketService {
   }
 
   getTicketsList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get(`${this.baseUrl}/`);
   }
 }

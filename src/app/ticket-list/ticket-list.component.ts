@@ -1,6 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Ticket } from '../ticket';
+import { Ticket } from 'src/app/Models/ticket';
 import { TicketService } from '../ticket.service.service';
 
 @Component({
@@ -39,7 +39,7 @@ export class TicketListComponent implements OnInit {
   }
 
   updateTicket(id: number,ticket :Ticket){
-    this.ticketService.updateTicket(id,ticket).subscribe(
+    this.ticketService.getTicket(ticket.id).subscribe(
       data => {
         console.log(data);
         this.reloadData();
@@ -54,6 +54,10 @@ export class TicketListComponent implements OnInit {
 
   addMessage(id:number){
     this.router.navigate(['addMessage', id]);
+  }
+
+  listMessages(id:number){
+    this.router.navigate(['listMessage', id]);
   }
 
 }
