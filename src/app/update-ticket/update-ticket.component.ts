@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Ticket } from '../ticket';
+import { Ticket } from '../Models/ticket';
+import { User } from '../Models/user';
 import { TicketDetailsComponent } from '../ticket-details/ticket-details.component';
 import { TicketService } from '../ticket.service.service';
 
@@ -29,10 +30,16 @@ export class UpdateTicketComponent implements OnInit {
           this.ticket = result1;
           console.log(result1);
         }, error => console.log(error));
+
+      this.ticket.user=new User();
+      this.ticket.user.id=parseInt(localStorage.getItem('userId') || 'null');  
     }
   
     updateTicket() {
-      this.ticketService.updateTicket(this.id,this.ticket)
+      this.ticket.user=new User();
+      this.ticket.user.id=parseInt(localStorage.getItem('userId') || 'null');
+      console.log(this.ticket)
+      this.ticketService.updateTicket(this.ticket)
         .subscribe(result => {
           console.log(result);
           this.ticket = new Ticket();

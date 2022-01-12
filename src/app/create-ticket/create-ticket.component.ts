@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Ticket } from '../ticket';
+import { Ticket } from 'src/app/Models/ticket';
+import { User } from '../Models/user';
 import { TicketService } from '../ticket.service.service';
 
 @Component({
@@ -21,7 +22,9 @@ export class CreateTicketComponent implements OnInit {
   newTicket(): void {
     this.submitted = false;
     this.ticket = new Ticket();
-    this.ticket.userId = parseInt(localStorage.getItem('userId') || 'null');
+    this.ticket.user = new User();
+    this.ticket.user.id=parseInt(localStorage.getItem('userId') || 'null');
+    //this.ticket.userId = parseInt(localStorage.getItem('userId') || 'null');
   }
 
   save() {

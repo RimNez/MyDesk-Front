@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Message } from '../message';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Message } from '../Models/message';
 import { MessageService } from '../message.service';
+import { Ticket } from '../Models/ticket';
+import { TicketService } from '../ticket.service.service';
 
 @Component({
   selector: 'app-add-message',
@@ -11,33 +13,50 @@ import { MessageService } from '../message.service';
 export class AddMessageComponent implements OnInit {
 
   //@ts-ignore
-  id: number; 
-  message : Message = new Message;
+  id: number;
+  message: Message = new Message;
   submitted = false;
+  type: any;
+  adminId: any;
 
-  constructor(private messageService: MessageService,private route: ActivatedRoute) { }
+  constructor(private messageService: MessageService, private ticketService: TicketService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.newTicket();
+    this.newMessage();
   }
 
-  newTicket(): void {
+  newMessage(): void {
     this.submitted = false;
     this.message = new Message();
-    this.message.ticket_id = this.id;
+    this.message.ticket = new Ticket();
+    this.message.ticket.id = this.id;
   }
 
   save() {
+
     this.messageService.createMessage(this.message)
       .subscribe(data => console.log(data), error => console.log(error));
-      console.log(this.message.ticket_id)
-    this.message = new Message();
+
+    this.type = localStorage.getItem("type");
+    if (this.type == "admin") {
+      this.adminId = localStorage.getItem("adminId");
+      console.log(this.adminId + "hi" + this.message.ticket.id);
+      this.ticketService.updateAdminId(this.adminId, this.message.ticket.id)
+        .subscribe(data => console.log(data), error => console.log(error));
+    }
   }
 
   onSubmit() {
     this.submitted = true;
     this.save();
+    this.router.navigate(['listMessage']);
+  }
+
+  gotoMessages() {
+    this.router.navigate(['listMessage']);
   }
 
 }

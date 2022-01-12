@@ -18,6 +18,8 @@ import { UpdateTicketComponent } from './update-ticket/update-ticket.component';
 import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
 import { AddMessageComponent } from './add-message/add-message.component';
+import { MessageListComponent } from './message-list/message-list.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AddMessageComponent } from './add-message/add-message.component';
     UpdateTicketComponent,
     TicketListComponent,
     TicketDetailsComponent,
-    AddMessageComponent
+    AddMessageComponent,
+    MessageListComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

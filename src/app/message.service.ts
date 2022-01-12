@@ -7,15 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class MessageService {
 
-  private baseUrl = 'http://localhost:3000/projects';
+  private baseUrl = 'http://localhost:8085/api/message';
   constructor(private http: HttpClient) { }
 
   getMessage(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  createMessage(ticket: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, ticket);
+  createMessage(message: Object): Observable<Object> {
+    console.log(message)
+    return this.http.post(`${this.baseUrl}/`, message);
   }
 
   updateMessage(id: number, value: any): Observable<Object> {
@@ -26,8 +27,7 @@ export class MessageService {
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
-  //we need getMessageListByTickeyID in the back
-  getMessagesList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+  getMessagesList(id:number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`);
   }
 }
