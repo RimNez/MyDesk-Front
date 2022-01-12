@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1>taches</h1>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Tache</th>
+                    <th>Etat</th>
+                    <th colspan="4">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tache of taches">
+                    <td>{{tache.objet}}</td>
+                    <td>{{tache.etat}}</td>
+                    <td><button class="btn btn-secondary" (click)="detailtache(tache.id)">Details</button></td>
+                    <td><button class="btn btn-secondary" (click)="addMessage(tache.id)">add Message</button></td>
+                    <td><button class="btn btn-success" (click)="listMessages(tache.id)">Messages</button></td>
+                    <td><button class="btn btn-primary" (click)="updatetache(tache.id,tache)">Update</button></td>
+                    <td><button class="btn btn-danger" (click)="deletetache(tache.id)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,7 +1,10 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+<<<<<<< HEAD
+=======
 import { Observable } from 'rxjs';
 import { Project } from '../Models/project';
+>>>>>>> d4dc1f90b822490fd0e2c3f3052209e43611ee47
 import { ProjectService } from '../project.service';
 
 

@@ -49,7 +49,4 @@ export class UpdateProjectComponent implements OnInit {
     this.router.navigate(['/projects']);
   }
 
-  updateActive(flag:boolean){
-    this.detailC.updateActive(flag);
-  }
 }
