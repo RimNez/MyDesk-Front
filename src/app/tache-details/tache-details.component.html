@@ -1,0 +1,15 @@
+<div *ngIf="tache">
+    <div>
+        <label>Object: </label> {{tache.objet}}
+    </div>
+    <div>
+        <label>Etat: </label> {{tache.etat}}
+    </div>
+    
+    <span class="button is-small btn-danger" (click)='deletetache(tache.id)'>Delete</span>
+
+    <hr/>
+</div>
+<hr>
+<button (click)="goToList()" class="btn btn-primary">taches List</button>
+<br>
