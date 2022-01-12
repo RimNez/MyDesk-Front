@@ -1,6 +1,5 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Project } from '../project';
 import { ProjectService } from '../project.service';
 

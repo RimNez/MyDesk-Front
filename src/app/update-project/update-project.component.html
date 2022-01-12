@@ -40,14 +40,6 @@
       <label for="budgetInDays">Budget in days</label>
       <input type="number" class="form-control" id="budget in days" required [(ngModel)]="project.budgetInDays" name="budgetInDays">
     </div>
-    <div>
-      <label>Active: </label> {{project.active}}
-    </div>
-
-  <span class="button is-small btn-primary" *ngIf='project.active' (click)='updateActive(false)'>Inactive</span>
-
-  <span class="button is-small btn-primary" *ngIf='!project.active' (click)='updateActive(true)'>Active</span>
-
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>
