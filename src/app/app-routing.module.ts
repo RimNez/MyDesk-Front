@@ -12,6 +12,8 @@ import { TicketDetailsComponent } from './ticket-details/ticket-details.componen
 import { UpdateTicketComponent } from './update-ticket/update-ticket.component';
 import { AddMessageComponent } from './add-message/add-message.component';
 import { MessageListComponent } from './message-list/message-list.component';
+import {CreateTacheComponent} from "./create-tache/create-tache.component";
+import {tacheListComponent} from "./tache-list/tache-list.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -26,7 +28,9 @@ const routes: Routes = [
   { path: 'detailsTicket/:id', component: TicketDetailsComponent },
   { path: 'addMessage/:id', component: AddMessageComponent },
   { path: 'listMessage/:id', component: MessageListComponent },
-  { path: 'updateTicket/:id', component: UpdateTicketComponent }
+  { path: 'updateTicket/:id', component: UpdateTicketComponent },
+  { path: 'addTache', component: CreateTacheComponent },
+  { path: 'taches', component: tacheListComponent }
 ];
 
 @NgModule({

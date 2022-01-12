@@ -19,6 +19,10 @@ import { TicketListComponent } from './ticket-list/ticket-list.component';
 import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
 import { AddMessageComponent } from './add-message/add-message.component';
 import { MessageListComponent } from './message-list/message-list.component';
+import { CreateTacheComponent } from './create-tache/create-tache.component';
+import {tacheListComponent} from "./tache-list/tache-list.component";
+import {tacheDetailsComponent} from "./tache-details/tache-details.component";
+
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { MessageListComponent } from './message-list/message-list.component';
     TicketListComponent,
     TicketDetailsComponent,
     AddMessageComponent,
-    MessageListComponent
+    MessageListComponent,
+    CreateTacheComponent,
+    tacheListComponent,
+    tacheDetailsComponent
+
   ],
   imports: [
     BrowserModule,
