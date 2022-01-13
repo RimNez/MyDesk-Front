@@ -1,5 +1,5 @@
 
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: rgb(141, 243, 204);">
       
     <ul class="navbar-nav">
         <li class="nav-item" style="padding-left: 20px;">
@@ -15,7 +15,13 @@
         <li class="nav-item" style="margin-left: 10px;">
             <a routerLink="addTicket" class="btn btn-info " role="button" routerLinkActive="active">Add Ticket</a>
         </li>
-        <li class="nav-item" style="padding-left: 650px;">
+        <li class="nav-item"  style="padding-left: 20px;">
+            <a routerLink="taches" class="btn btn-primary " role="button" routerLinkActive="active">Taches</a>
+        </li>
+        <li class="nav-item" style="margin-left: 10px;">
+            <a routerLink="addTache" class="btn btn-info " role="button" routerLinkActive="active">Add Tache</a>
+        </li>
+        <li class="nav-item" style="padding-left: 550px;">
             <a (click)="logout()" class="btn btn-danger " role="button" routerLinkActive="active">logout</a>
         </li>
     </ul>

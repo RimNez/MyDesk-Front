@@ -55,8 +55,4 @@ export class AddMessageComponent implements OnInit {
     this.router.navigate(['listMessage']);
   }
 
-  gotoMessages() {
-    this.router.navigate(['listMessage']);
-  }
-
 }
