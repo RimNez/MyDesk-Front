@@ -6,20 +6,20 @@
             <a routerLink="projects" class="btn btn-primary " role="button" routerLinkActive="active">Projects</a>
         </li>
         <li class="nav-item" style="margin-left: 10px;">
-            <a routerLink="addProject" class="btn btn-info " role="button" routerLinkActive="active">Add Project</a>
+            <a *ngIf="isUser" routerLink="addProject" class="btn btn-info " role="button" routerLinkActive="active">Add Project</a>
         </li>
         
         <li class="nav-item"  style="padding-left: 20px;">
             <a routerLink="tickets" class="btn btn-primary " role="button" routerLinkActive="active">Tickets</a>
         </li>
         <li class="nav-item" style="margin-left: 10px;">
-            <a routerLink="addTicket" class="btn btn-info " role="button" routerLinkActive="active">Add Ticket</a>
+            <a *ngIf="isUser" routerLink="addTicket" class="btn btn-info " role="button" routerLinkActive="active">Add Ticket</a>
         </li>
         <li class="nav-item"  style="padding-left: 20px;">
             <a routerLink="taches" class="btn btn-primary " role="button" routerLinkActive="active">Taches</a>
         </li>
         <li class="nav-item" style="margin-left: 10px;">
-            <a routerLink="addTache" class="btn btn-info " role="button" routerLinkActive="active">Add Tache</a>
+            <a *ngIf="isUser" routerLink="addTache" class="btn btn-info " role="button" routerLinkActive="active">Add Tache</a>
         </li>
         <li class="nav-item" style="padding-left: 550px;">
             <a (click)="logout()" class="btn btn-danger " role="button" routerLinkActive="active">logout</a>

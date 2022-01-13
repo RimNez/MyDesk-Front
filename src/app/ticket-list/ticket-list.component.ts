@@ -19,7 +19,6 @@ export class TicketListComponent implements OnInit {
   constructor(private ticketService: TicketService, private router: Router) { }
 
   ngOnInit() {
-    console.log("hihiji");
     this.reloadData();
     console.log(this.tickets)
   }
