@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserServiceService {
 
-  private baseUrl = 'http://localhost:8085/api/user';
+  private baseUrl = 'http://finalpfabackend-env.eba-qbn8satq.us-east-1.elasticbeanstalk.com/api/user';
 
   constructor(private http: HttpClient) { }
 
@@ -24,7 +24,7 @@ export class UserServiceService {
     return this.http.post(`${this.baseUrl}/login`, user);
   }
   signInAdmin(admin: Object): Observable<Object> {
-    return this.http.post(`http://localhost:8085/api/Admin/login`, admin);
+    return this.http.post(`http://finalpfabackend-env.eba-qbn8satq.us-east-1.elasticbeanstalk.com/api/Admin/login`, admin);
   }
 
   updateUser(value: any): Observable<Object> {

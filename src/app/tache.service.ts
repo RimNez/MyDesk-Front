@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TacheService {
 
-  private baseUrl = 'http://localhost:8085/api/tache';
+  private baseUrl = 'http://localhost:3000/projects';
   constructor(private http: HttpClient) { }
 
   getTache(id: number): Observable<any> {

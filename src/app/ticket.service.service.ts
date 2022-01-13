@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TicketService {
 
-  private baseUrl = 'http://localhost:8085/api/ticket';
+  private baseUrl = 'http://finalpfabackend-env.eba-qbn8satq.us-east-1.elasticbeanstalk.com/api/ticket';
   constructor(private http: HttpClient) { }
 
   getTicket(id: number): Observable<any> {

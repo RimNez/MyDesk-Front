@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AdminService {
 
-  private baseUrl = 'http://localhost:8036/generated/user';
+  private baseUrl = 'http://finalpfabackend-env.eba-qbn8satq.us-east-1.elasticbeanstalk.com/api/admin';
   
   constructor(private http: HttpClient) {}
 

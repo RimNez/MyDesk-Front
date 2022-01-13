@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class MessageService {
 
-  private baseUrl = 'http://localhost:8085/api/message';
+  private baseUrl = 'http://finalpfabackend-env.eba-qbn8satq.us-east-1.elasticbeanstalk.com/api/message';
   constructor(private http: HttpClient) { }
 
   getMessage(id: number): Observable<any> {
